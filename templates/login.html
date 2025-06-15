@@ -1,0 +1,17 @@
+{% extends 'layouts/skeleton.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+<div class="d-flex justify-content-start align-items-center mb-3">
+    <h2 class="m-0 me-5">Login</h2>
+</div>
+<form class="w-50" method="POST" action="">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <div class="mb-3">
+        <button class="btn btn-success" type="submit">Log in!</button>
+        <a href="{% url 'signup' %}" class="btn btn-link">Create new account</a>
+    </div>
+</form>
+{% endblock %}
